@@ -40,13 +40,11 @@ public class JDBC {
 			rs = st.executeQuery(sql);
 			
 			ResultSetMetaData mt=rs.getMetaData();
-			System.out.println(mt.getColumnCount());
 			while(rs.next()){ 
 				HashMap<String,String> h=new HashMap<String,String>();
 				for(int i=1;i<=mt.getColumnCount();i++) {
 					String cName=mt.getColumnName(i);
 					h.put(cName,rs.getString(cName));
-					System.out.println(cName);
 				}
 				a.add(h); 
 			}

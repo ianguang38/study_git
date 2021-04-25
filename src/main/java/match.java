@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.servlet.annotation.MultipartConfig;
 
 @WebServlet("/match")
+@MultipartConfig
 public class match extends HttpServlet {
 
-	/**
-	 *
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		Part requestPart = request.getPart("annovar");
@@ -30,10 +30,12 @@ public class match extends HttpServlet {
         	for(HashMap<String,String> drug:rs) {
         		if(drug.get("summary_markdown").contains(refgene)&&!a.contains(drug.get("id"))) {
         			a.add(drug.get("id"));
-        			System.out.println(drug.get("id"));
+					System.out.println(drug.get("id"));
         		}
         	}
         }
+        request.setAttribute("result", a);
+        request.getRequestDispatcher("result.jsp").forward(request,response);
 	}
 
 }

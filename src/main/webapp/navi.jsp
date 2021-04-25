@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,23 +18,9 @@
     </div>
     <div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="<%=path%>/drugs">drug</a></li>
-            <li><a href="#">SVN</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Java
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">jmeter</a></li>
-                    <li><a href="#">EJB</a></li>
-                    <li><a href="#">Jasper Report</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">分离的链接</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">另一个分离的链接</a></li>
-                </ul>
-            </li>
+            <li class="active"><a href="<%=path%>/drugs">Drugs</a></li>
+            <li class="active"><a href="<%=path%>/druglabels">Drug labels</a></li>
+            <li class="active"><a href="<%=path%>/guideline">Dosing Guideline</a></li>
         </ul>
     </div>
     </div>

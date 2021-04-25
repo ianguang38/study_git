@@ -16,20 +16,11 @@ form {margin:50% 0}
 	<%@include file="navi.jsp" %>
 	
 	<table border="1" class="table table-striped table-sm">
-		<tr>
-			<td>ID</td>
-			<td>Name</td>
-			<td>Drug URL</td>
-			<td>Biomarker</td>
-		</tr>
-		
+
 		<c:forEach items="${result}" var="row">
 		<tr>
-			<td>${row.id}</td>
-			<td>${row.name}</td>
-			<td><a href="https://api.pharmgkb.org/v1/data${row.drug_url}">${row.drug_url}</a></td>
-			<td>${row.biomarker}</td>
-			
+			<td>${row}</td>
+	
 			
 		</tr>
 		</c:forEach>
