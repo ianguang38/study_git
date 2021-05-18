@@ -4,18 +4,21 @@
 	<%@page import="java.util.ArrayList" %>
 	<%@page import="java.util.HashMap" %>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/main.css"/>
+	
 <style type="text/css">
 td {text-align:center;}
-form {margin:50% 0}
 </style>
 
-<title>Insert title here</title>
+<title>DRUGS</title>
 </head>
 <body>
+    <%if(request.getAttribute("drugs")==null){
+    	request.getRequestDispatcher("/drugs").forward(request,response);} 
+    %>
+    
 	<%@include file="navi.jsp" %>
-	
-	<table border="1" class="table table-striped table-sm">
+	<table border="1">
 		<tr>
 			<td>ID</td>
 			<td>Name</td>
@@ -23,14 +26,12 @@ form {margin:50% 0}
 			<td>Biomarker</td>
 		</tr>
 		
-		<c:forEach items="${result}" var="row">
+		<c:forEach items="${drugs}" var="drug">
 		<tr>
-			<td>${row.id}</td>
-			<td>${row.name}</td>
-			<td><a href="https://api.pharmgkb.org/v1/data${row.drug_url}">${row.drug_url}</a></td>
-			<td>${row.biomarker}</td>
-			
-			
+			<td>${drug.id}</td>
+			<td>${drug.name}</td>
+			<td>>${drug.drug_url}</td>
+			<td>${drug.biomarker}</td>
 		</tr>
 		</c:forEach>
 	</table>

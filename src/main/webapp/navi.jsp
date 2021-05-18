@@ -1,29 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-<meta charset="utf-8">
- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<title>Insert title here</title>
-</head>
-<body>
-	<% String path=request.getContextPath(); %>
+	<head>
+		<title>Precision Medicine Seacrch Webpage</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/main.css"/>
+	</head>
+	<body>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="container">
+			    <% String path=request.getContextPath();%>
+				<li><a href="<%=path%>">Welcome</a></li>
+				<li><a href="<%=path%>/drugs">Drug</a></li>
+				<li><a href="<%=path%>/druglabels">Label</a><li>
+				<li><a href="<%=path%>/guideline">Dosage</a></li>
+				<li><a href="<%=path%>/result">Result</a></li>
+				<li class="ml-auto"><%=(String)request.getSession().getAttribute("username")%></li>
+			</ul>
+		</nav>
+	</body>
 
-
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="<%=path%>">home</a>
-    </div>
-    <div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="<%=path%>/drugs">Drugs</a></li>
-            <li class="active"><a href="<%=path%>/druglabels">Drug labels</a></li>
-            <li class="active"><a href="<%=path%>/guideline">Dosing Guideline</a></li>
-        </ul>
-    </div>
-    </div>
-</nav>
-</body>
-</html> 

@@ -4,21 +4,27 @@
 	<%@page import="java.util.ArrayList" %>
 	<%@page import="java.util.HashMap" %>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/main.css"/>
+	
+<title>DOSING GUIDELINES</title>
+<style type="text/css">
+table,tr, td {vertical-align:baseline}
+</style>
 
-<title>Insert title here</title>
 </head>
 <body>
-	<%@include file="navi.jsp" %>
-	
+    <%@include file="navi.jsp" %>
 	<table border="1">
-		<c:forEach items="${result}" var="row">
+		<tr align="center">
+			<td>ID</td>
+			<td>Source</td>
+			<td width="50%">Summary markdown</td>
+		</tr>
+		<c:forEach items="${guidelines}" var="guideline">
 		<tr>
-			<td>${row.id}</td>
-			<td>${row.name}</td>
-			<td>${row.recommendation}</td>
-			<td>${row.drug_id}</td>
-			<td>${row.source}</td>
-			<td>${row.summary_markdown}</td>
+			<td align="center">${guideline.id}</td>
+			<td align="center">${guideline.source}</td>
+			<td>${guideline.summary_markdown}</td>
 			
 			
 			

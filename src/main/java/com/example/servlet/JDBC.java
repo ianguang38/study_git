@@ -1,3 +1,5 @@
+package com.example.servlet;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -28,10 +30,10 @@ public class JDBC {
 		return i;
 	}
 
-	public static ArrayList result(String sql) {
+	public static ArrayList<HashMap<String,String>> result(String sql) {
 		ResultSet rs = null; // return null when failed
 
-		ArrayList<HashMap> a = new ArrayList<HashMap>();
+		ArrayList<HashMap<String,String>> a = new ArrayList<HashMap<String,String>>();
 
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -74,9 +76,20 @@ public class JDBC {
 		return f;
 	}
 
+	
+
+	
+	
 	public JDBC() {
 		String URL = "jdbc:postgresql://localhost:5432/group";
 		String PASSWORD = "tianguang";
 	}
 
+	
+	public static void main(String[] args) {
+		JDBC A=new JDBC();
+		System.out.println(JDBC.class.getPackage().getName());
+		System.out.println(JDBC.class.getPackage().getName());
+		System.out.println(JDBC.class.getPackage().getName());
+	}
 }
