@@ -22,7 +22,7 @@
 			   <input type="password" placeholder="Passwords" name="password">		   
 			</div>
 			<input type="submit" name="action" value="login">
-            <input type="button" name="action" value="register">
+            <input type="submit" name="action" value="register">
 
 		</form>
 		</div>

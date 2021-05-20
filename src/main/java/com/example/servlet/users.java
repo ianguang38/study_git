@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class users extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		System.out.println("dsfd");
+		doPost(request,response);
 	} 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -23,10 +25,10 @@ public class users extends HttpServlet {
 		//write ... to database
 		String sql="INSERT INTO users VALUES('"+user+"','"+pw+"')";
 		int i=JDBC.execute(sql);
-		System.out.println(i);
+		System.out.println("1111111");
 		
 		response.sendRedirect("index.jsp");
-		
+		System.out.println("???");
 
 		
 	}
